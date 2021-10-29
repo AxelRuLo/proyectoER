@@ -1,9 +1,5 @@
-import tkinter as tk
-from PIL import ImageTk, Image
-# import backend
 
-
-def ventanaSecundaria(root,tk):
+def ventanaSecundaria(root,tk,simbolo):
 # variables
     pesoAtomico="0"
     puntoFusion="0"
@@ -13,17 +9,13 @@ def ventanaSecundaria(root,tk):
     oxidacion="0"
     valencia="0"
 
-# def ventanaSecundaria(root):
     ventanaSecundaria = tk.Toplevel(root)
     ventanaSecundaria.geometry("800x700")
     ventanaSecundaria.resizable(False, False)
     ventanaSecundaria.config(bg="#E4FFFA")
 
     # imagen
-    img = Image.open('./resources/sodio.png')
-    img_tk = ImageTk.PhotoImage(img)
-    widget = tk.Label(ventanaSecundaria, image=img_tk, width=200,height=200)
-    widget.place(x=50,y=30)
+    tk.Label(ventanaSecundaria, text = simbolo.capitalize() , font=('Calibri', 50),background="#006DF4",width=6,height=2).place(x=50,y=60)
 
     # labels grandes
     texto = "alsdfjalsdfjklasjdfñlasjdfwoerfiqruipweururoqwieuasdkljfxcmjvlkajsdlfjoiuqowéurrweirpasldfklasfdkasjdfljalñsjdfñljasdlñfjklasñdfjklñsjdfalsdfjalsdfjklasjdfñlasjdfwoerfiqruipweururoqwieuasdkljfxcmjvlkajsdlfjoiuqowéurrweirpasldfklasfdkasjdfljalñsjdfñljasdlñfjklasñdfjklñsjdf"
