@@ -49,9 +49,6 @@ def obtenerSimbolos():
         contador += 1
     return simbolosElementos
 
-        
-
-
 def comprobarEntrada(elemento):
     valdator = re.compile(exprecionConcatenada)
     match =valdator.match(elemento)
@@ -99,3 +96,19 @@ def cambiarNombreSimbolo(nombre):
     index = nombresElementos.index(nombre)
     return listaSimbolos[index]
 
+#-------------------------------------lecture of txt-------------------------------------------------#
+
+def obtenerDatos(simbolo):
+    informacion = []
+    f = open("./resources/Elementos.txt", "r",encoding="utf8")
+    lineas = f.readlines()
+    f.close()
+    contador = 13
+    for i in range(len(lineas)):
+        if((contador-1)%12 == 0 ):
+            if(lineas[i].replace("\n","") == simbolo):
+                print(lineas[i])
+                for j in range(1,11):
+                    informacion.append(lineas[i+j].replace("\n",""))
+        contador += 1
+    return informacion

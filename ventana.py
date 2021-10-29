@@ -1,13 +1,16 @@
+from tkinter.constants import RIGHT
+import backend
 
 def ventanaSecundaria(root,tk,simbolo):
 # variables
-    pesoAtomico="0"
-    puntoFusion="0"
-    puntoEbullicion="0"
-    temperaturaPresion="0"
-    configuracion="0"
-    oxidacion="0"
-    valencia="0"
+    listaDatos = backend.obtenerDatos(simbolo)
+    pesoAtomico=listaDatos[3]
+    puntoFusion=listaDatos[4]
+    puntoEbullicion=listaDatos[5]
+    temperaturaPresion=listaDatos[6]
+    configuracion=listaDatos[7]
+    oxidacion=listaDatos[8]
+    valencia=listaDatos[9]
 
     ventanaSecundaria = tk.Toplevel(root)
     ventanaSecundaria.geometry("800x700")
@@ -18,19 +21,18 @@ def ventanaSecundaria(root,tk,simbolo):
     tk.Label(ventanaSecundaria, text = simbolo.capitalize() , font=('Calibri', 50),background="#006DF4",width=6,height=2).place(x=50,y=60)
 
     # labels grandes
-    texto = "alsdfjalsdfjklasjdfñlasjdfwoerfiqruipweururoqwieuasdkljfxcmjvlkajsdlfjoiuqowéurrweirpasldfklasfdkasjdfljalñsjdfñljasdlñfjklasñdfjklñsjdfalsdfjalsdfjklasjdfñlasjdfwoerfiqruipweururoqwieuasdkljfxcmjvlkajsdlfjoiuqowéurrweirpasldfklasfdkasjdfljalñsjdfñljasdlñfjklasñdfjklñsjdf"
-    tk.Label(ventanaSecundaria,text=texto,wraplength=750,font=('Calibri', 14),background="#E4FFFA").place(x=30,y=270)
-    tk.Label(ventanaSecundaria,text=texto,wraplength=750,font=('Calibri', 14),background="#E4FFFA").place(x=30,y=390)
-    tk.Label(ventanaSecundaria,text=texto,wraplength=750,font=('Calibri', 14),background="#E4FFFA").place(x=30,y=490)
+    tk.Label(ventanaSecundaria,text=listaDatos[0],wraplength=750,font=('Calibri', 14),background="#E4FFFA").place(x=30,y=270)
+    tk.Label(ventanaSecundaria,text=listaDatos[1],wraplength=750,font=('Calibri', 14),background="#E4FFFA").place(x=30,y=390)
+    tk.Label(ventanaSecundaria,text=listaDatos[2],wraplength=750,font=('Calibri', 14),background="#E4FFFA").place(x=30,y=490)
 
     # labels chicos    
-    tk.Label(ventanaSecundaria,text=f'Peso atomico: {pesoAtomico}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=30)
-    tk.Label(ventanaSecundaria,text=f'punto de fusion: {puntoFusion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=60)
-    tk.Label(ventanaSecundaria,text=f'punto de ebullicion: {puntoEbullicion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=90)
-    tk.Label(ventanaSecundaria,text=f'Fase a temperatura y presión estándar: {temperaturaPresion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=120)
-    tk.Label(ventanaSecundaria,text=f'configuracion electronica: {configuracion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=150)
-    tk.Label(ventanaSecundaria,text=f'Estados de oxidación comunes: {oxidacion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=180)
-    tk.Label(ventanaSecundaria,text=f'Número de electrones de valencia: {valencia}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=210)
+    tk.Label(ventanaSecundaria,justify=RIGHT,text=f'{pesoAtomico}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=30)
+    tk.Label(ventanaSecundaria,justify=RIGHT,text=f'{puntoFusion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=60)
+    tk.Label(ventanaSecundaria,justify=RIGHT,text=f'{puntoEbullicion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=90)
+    tk.Label(ventanaSecundaria,justify=RIGHT,text=f'{temperaturaPresion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=120)
+    tk.Label(ventanaSecundaria,justify=RIGHT,text=f'{configuracion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=150)
+    tk.Label(ventanaSecundaria,justify=RIGHT,text=f'{oxidacion}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=180)
+    tk.Label(ventanaSecundaria,justify=RIGHT,text=f'{valencia}',wraplength=500,font=('Calibri', 14),background="#E4FFFA").place(x=300,y=210)
 
     ventanaSecundaria.mainloop()
 
